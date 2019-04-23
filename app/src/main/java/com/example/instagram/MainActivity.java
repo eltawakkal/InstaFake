@@ -3,6 +3,7 @@ package com.example.instagram;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.instagram.model.User;
 import com.google.firebase.FirebaseApp;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 User value = dataSnapshot.getValue(User.class);
-                Log.d(TAG, "Value is: " + value.getNama());
+                Toast.makeText(MainActivity.this, "Response: " + value.getNama(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
