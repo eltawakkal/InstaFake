@@ -3,6 +3,7 @@ package com.example.instagram;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.instagram.model.User;
@@ -45,5 +46,10 @@ public class MainActivity extends AppCompatActivity {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+    }
+
+    public void changeData(View view) {
+        User user = new User("2321", "SMK IDN INDONESIA", "smk@idn.com", "sdff");
+        myRef.setValue(user);
     }
 }
